@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
-export const LayoutCpntainer = styled.div`
-  width: 100%;
-  height: 100vh;
-  padding: 0 16rem;
-  display: flex;
-  flex-direction: column;
+export const LayoutContainer = styled.div`
+  .container {
+    width: 100%;
+    max-width: 70rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 2rem;
+  }
 `
