@@ -8,7 +8,7 @@ import {
 import heroImage from '../../../../assets/hero-image.png'
 import { RegularText } from '../../../../components/typografy'
 import { InfoWithIcon } from '../../../../components/infoWithIcon'
-import { ShoppingCart, Package, Timer, Coffee } from '@phosphor-icons/react'
+import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react'
 import { useTheme } from 'styled-components'
 
 export function Hero() {

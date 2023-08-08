@@ -5,7 +5,7 @@ import {
   HeaderContainer,
   HeaderButtonsContainer,
 } from './styled'
-import { MapPin, ShoppingCart } from '@phosphor-icons/react'
+import { MapPin, ShoppingCart } from 'phosphor-react'
 export function Header() {
   return (
     <HeaderContainer>
