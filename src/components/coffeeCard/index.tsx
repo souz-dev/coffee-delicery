@@ -6,10 +6,11 @@ import {
   Name,
   Tags,
 } from './styles'
-import { RegularText, TitleText } from '../../components/typografy'
+import { RegularText, TitleText } from '../typografy'
 import { QuantityInput } from '../quantityInput'
 import { ShoppingCart } from 'phosphor-react'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { CartContext } from '../../contexts/cartContext'
 export interface Coffee {
   id: number
   tags: string[]
@@ -24,28 +25,28 @@ interface CoffeeProps {
 }
 
 export function CoffeeCard({ coffee }: CoffeeProps) {
-  const [quantity, setQuantity] = useState(1)
+  const [amount, setAmount] = useState(1)
+  const { onAddToCart } = useContext(CartContext)
 
   function handleIncrease() {
-    setQuantity((state) => state + 1)
+    setAmount((prev) => prev + 1)
   }
 
   function handleDecrease() {
-    setQuantity((state) => state - 1)
+    setAmount((prev) => prev - 1)
   }
-  const formattedPrice = coffee.price.toLocaleString('pt-BR', {
+
+  function clearAmount() {
+    setAmount(1)
+  }
+  const formattedPrice = coffee.price?.toLocaleString('pt-BR', {
     minimumFractionDigits: 2,
   })
 
   function handleAddToCart() {
-    // const coffeeToAdd = {
-    //   ...coffee,
-    //   quantity,
-    // }
-
-    // addCoffeeToCart(coffeeToAdd)
-
-    setQuantity(1)
+    console.log('chamou')
+    onAddToCart({ ...coffee, quantity: amount })
+    clearAmount()
   }
 
   return (
@@ -72,7 +73,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
           <QuantityInput
             onIncrease={handleIncrease}
             onDecrease={handleDecrease}
-            quantity={quantity}
+            quantity={amount}
           />
           <button onClick={handleAddToCart}>
             <ShoppingCart weight="fill" size={22} />

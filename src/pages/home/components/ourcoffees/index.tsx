@@ -1,7 +1,7 @@
 import { TitleText } from '../../../../components/typografy'
 import { CoffeeList, OurCoffeesContainer } from './styles'
 import { coffees } from '../../../../mock/coffee'
-import { CoffeeCard } from '../../../../components/coffeeCard/indes'
+import { CoffeeCard } from '../../../../components/coffeeCard'
 
 export function OurCoffees() {
   return (

@@ -43,6 +43,24 @@ export const LocationButton = styled(SimpleButton)`
     }
   }
 `
+export const CartButtonSection = styled.div`
+  position: relative;
+`
+export const CartButtonCounter = styled.span`
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: ${({ theme }) => theme.colors['brand-yellow-dark']};
+  color: ${({ theme }) => theme.colors['brand-yellow-light']};
+  font-size: ${({ theme }) => theme.textSizes['text-bold-s']};
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 export const CartButton = styled(SimpleButton)`
   background: ${({ theme }) => theme.colors['brand-yellow-light']};
   color: ${({ theme }) => theme.colors['brand-yellow-dark']};
