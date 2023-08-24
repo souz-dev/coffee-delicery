@@ -27,7 +27,6 @@ export function PaymentMethodOptions() {
   } = useFormContext()
 
   const paymentMethodError = errors?.paymentMethod?.message as string
-
   return (
     <PaymentMethodOptionsContainer>
       {Object.entries(paymentMethods).map(([key, { label, icon }]) => (

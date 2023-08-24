@@ -1,3 +1,4 @@
+import { SimpleButton } from '@components/simpleButton'
 import styled from 'styled-components'
 
 export const OrderConfirmedContainer = styled.div`
@@ -35,4 +36,18 @@ export const OrderDetailsContainer = styled.div`
     border-radius: 7px 37px 7px 37px;
     background: linear-gradient(102.89deg, #dbac2c 2.61%, #8047f8 98.76%);
   }
+`
+
+export const ButtonRedirect = styled(SimpleButton)`
+  padding: 0.75rem 2.8rem;
+  color: #ffffff;
+  font-weight: 700;
+  background: #dbac2c;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 6px;
+  margin-top: 0.7rem;
+  text-transform: uppercase;
+  transition: 0.4s;
+  line-height: 1.3rem;
 `

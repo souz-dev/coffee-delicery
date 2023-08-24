@@ -17,9 +17,9 @@ const confirmOrderFormValidationSchema = zod.object({
   street: zod.string().min(1, 'Informe o Rua'),
   number: zod.string().min(1, 'Informe o Número'),
   complement: zod.string(),
-  neighborhood: zod.string().min(1, 'Informe o Bairro'),
+  district: zod.string().min(1, 'Informe o Bairro'),
   city: zod.string().min(1, 'Informe a Cidade'),
-  state: zod.string().min(1, 'Informe o Estado'),
+  uf: zod.string().min(1, 'Informe o Estado'),
   paymentMethod: zod.nativeEnum(PaymentMethods, {
     errorMap: () => {
       return { message: 'Informe o método de pagamento' }
@@ -44,7 +44,6 @@ export function CompleteOrderPage() {
   const navigate = useNavigate()
 
   function handleConfirmOrder(data: ConfirmOrderFormData) {
-    console.log('aqui')
     navigate('/success', {
       state: data,
     })

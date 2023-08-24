@@ -1,13 +1,16 @@
 import { useTheme } from 'styled-components'
 import { RegularText, TitleText } from '../../components/typografy'
-import { OrderConfirmedContainer, OrderDetailsContainer } from './styles'
+import {
+  ButtonRedirect,
+  OrderConfirmedContainer,
+  OrderDetailsContainer,
+} from './styles'
 import { InfoWithIcon } from '../../components/infoWithIcon'
 import { Clock, CurrencyDollar, MapPin } from 'phosphor-react'
 import confirmedOrderIllustration from '../../assets/images/confirmation-illustration.svg'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { paymentMethods } from '../../pages/checkout/components/completeOrderForm/paymentMethod'
 import { OrderData } from '../../pages/checkout'
-import { SimpleButton } from '../../components/simpleButton'
 import { useEffect } from 'react'
 
 interface LocationType {
@@ -55,7 +58,7 @@ export function Success() {
               <RegularText>
                 Entrega em <strong>{state.street}</strong>, {state.number}
                 <br />
-                {state.neighborhood} - {state.city}, {state.state}
+                {state.district} - {state.city}, {state.uf}
               </RegularText>
             }
           />
@@ -88,9 +91,9 @@ export function Success() {
       </section>
 
       <footer>
-        <SimpleButton onClick={backToHome}>
+        <ButtonRedirect onClick={backToHome}>
           Voltar para pagina inicial
-        </SimpleButton>
+        </ButtonRedirect>
       </footer>
     </OrderConfirmedContainer>
   )

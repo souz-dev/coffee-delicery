@@ -44,7 +44,6 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
   })
 
   function handleAddToCart() {
-    console.log('chamou')
     onAddToCart({ ...coffee, quantity: amount })
     clearAmount()
   }

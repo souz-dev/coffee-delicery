@@ -14,7 +14,6 @@ export function AddressForm() {
   const { register, formState } = useFormContext()
 
   const { errors } = formState as unknown as ErrorsType
-
   return (
     <AddressFormContainer>
       <div className="row">
